@@ -1,0 +1,15 @@
+
+.fio{
+    margin-right: 30px;
+}
+
+table{
+    margin-top: 20px;
+    border: 1px solid black;
+}
+th,tr,td{
+    border: 1px solid black;
+    width: 150px;
+    height: 30px;
+    text-align: center;
+}

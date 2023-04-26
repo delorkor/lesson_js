@@ -1,0 +1,30 @@
+.wrapper{
+    border: slateblue solid 2px;
+    width: 400px;
+    min-height: 300px;
+    list-style-type: none;
+    background-color: aqua;
+}
+ul{
+    display: inline-block;
+}
+li{
+
+    list-style-type: none; 
+}
+.but{
+    height: 50px;
+    display: flex;
+    justify-content: space-between;
+}
+.description{
+    min-height: 170px;
+}
+button{
+
+    width: 100px;
+    height: 40px;
+}
+#id_title{
+    display: none;
+}

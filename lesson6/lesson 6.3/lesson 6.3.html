@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Document</title>
+</head>
+<body>
+    <label for="">name</label>
+    <input class="fio" type="text" value="">
+    <label for="">surname</label>
+    <input class="fio" type="text" value="">
+    <label for="">age</label>
+    <input class="fio" type="text" value="">
+    <input id="but" type="submit">
+    <input id="del" type="submit" value="удалить">
+    <table>
+      <thead>
+          <tr>
+              <th class="tabl" >name</th>
+              <th >surname</th>
+              <th >age</th>
+          </tr>
+      </thead>
+      <tbody id="tavle_body">
+              <br>
+      </tbody>
+  </table>
+
+    </div>
+  <script>
+let butt=document.querySelector('#but');
+let del=document.querySelector('#del');
+let fio=[...document.querySelectorAll('.fio')]
+let text =document.querySelector('#tavle_body')
+
+butt.addEventListener('click',function(event){
+  let valid=fio.every(function(index){
+    console.log(index)
+    if(index.value==''){return false}
+    else{return true}
+    
+  })
+  console.log(valid)
+  if (valid==true) {
+    return text.innerHTML+= `<tr><td>${fio[0].value }</td> <td>${fio[1].value }</td><th>${fio[2].value }</th></tr>`
+  }
+  else{return alert('одно из полей не заполнено')}
+
+// text.innerHTML+= fio.map((elem)=>{
+// //  return`<td>${elem.value}</td>`
+// }) 
+ })
+
+
+ del.addEventListener('click',function(event){
+  text.innerHTML=''
+})
+
+
+
+  </script>  
+</body>
+</html>

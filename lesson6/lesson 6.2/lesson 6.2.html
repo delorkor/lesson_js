@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Document</title>
+</head>
+<body>
+    <label for="">name</label><br>
+    <input class="fio" type="text" value=""><br>
+    <label for="">surname</label><br>
+    <input class="fio" type="text" value=""><br>
+    <label for="">age</label><br>
+    <input class="fio" type="text" value=""><br>
+    <input id="but" type="submit"><br>
+    <div id="modal" class="m">
+      <div class="wrapper">
+      <div id="text"></div>
+     <div id="but_ok"><button id="ok">ок</button></div>
+    </div>
+ <br>
+    </div>
+  <script>
+let butt=document.querySelector('#but');
+let ok=document.querySelector('#ok');
+let modd=document.querySelector('#modal')
+let fio=[...document.querySelectorAll('.fio')]
+let text =document.querySelector('#text')
+
+
+
+butt.addEventListener('click',function(event){
+
+  let valid=fio.every(function(index){
+  
+    if(index.value==''){return false}
+    else{return true}
+  })
+    console.log(valid)
+
+
+    if (valid==true) {
+      modd.classList.add('mod')
+
+      for (let i = 0; i < fio.length; i++) {
+        text.innerHTML+=`<b>${fio[i].value}</b>\xa0 `
+        
+      }
+//       text.innerHTML+= fio.map((elem)=>{
+//        return`<b>${elem.value}</b><br>`
+// }) 
+
+  }
+  else{
+    text.innerHTML=''
+    modd.classList.remove('mod')
+    }
+
+  
+
+  
+//  return`<b>${elem.value}</b><br>`
+ 
+  
+}) 
+
+
+ ok.addEventListener('click',function(event){
+  modd.classList.remove('mod')
+  text.innerHTML=''
+})
+
+
+
+  </script>  
+</body>
+</html>

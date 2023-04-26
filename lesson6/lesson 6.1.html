@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+
+let questionnaire={
+Surname:'',
+name: '',
+Patronymic: '',
+age: '',
+floor: '',
+
+
+val:{
+    Surname:'Введите фамилию',
+    name:'Введите имя',
+    Patronymic:'Введите отчество',
+    // age:'Введите возраст',
+},
+
+valid: function () {
+let arr=Object.entries(this.val)
+for (let i = 0; i < arr.length; i++) {
+    this[arr[i][0]]=prompt(arr[i][1],'')
+if (this[arr[i][0]]=='') {
+    alert(`ошибка вы не ввели ответ на вопрос ${arr[i][1]}`)
+    i--
+}
+
+    
+}
+ this.age=+prompt('Введите возраст','')
+while (!Number.isFinite(this.age) || this.age=='' ) {
+    alert(`ошибка вы не ввели ответ на вопрос Введите возраст`)
+    this.age=+prompt('Введите возраст','')
+}
+this.floor=confirm('Ваш пол - мужской?')
+},
+
+
+setCard:function(){
+    return alert(`Ваше ФИО:${this.Surname} ,${this.name} ,${this.Patronymic}\n Ваш возраст в годах:${this.age}\n Ваш возраст в днях:${this.age*365}\n Через 5 лет вам будет:${this.age+5}\n Ваш пол:${(this.floor==true)?'Мужской':'Женский'}\n Вы на пенсии:${(this.floor==true)?'в 65':'в 55'}`)
+}
+}
+
+questionnaire.valid()
+questionnaire.setCard()
+
+    </script>
+</body>
+</html>
+
