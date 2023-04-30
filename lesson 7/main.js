@@ -18,29 +18,30 @@ function getValue() {
       console.log(data);
       list.innerHTML = "";
       getList(data)
-      TuduList.addEventListener("click", function (e) {
-        if (e.target.textContent === "delete") {
-          // let listDel = e.target.closest("li");
-          let TitleDel = e.target.closest(".wrapper").firstElementChild;
-          // console.log(TitleDel.textContent)
-          // listDel.remove();
-          for (let i = 0; i < data.length; i++) {
-            if (data[i].id == TitleDel.textContent) {
-             if (i==0) {
-              data.splice(i, i+1);
-             }else{ 
-              data.splice(i, i);
-            }
-             
-              list.innerHTML = "";
-              getList(data)
-              console.log(data);
-            }
-            
-          }
-        }
-      });
+
       
+    });
+    TuduList.addEventListener("click", function (e) {
+      if (e.target.textContent === "delete") {
+        // let listDel = e.target.closest("li");
+        let TitleDel = e.target.closest(".wrapper").firstElementChild;
+        // console.log(TitleDel.textContent)
+        // listDel.remove();
+        for (let i = 0; i < data.length; i++) {
+          if (data[i].id == TitleDel.textContent) {
+           if (i==0) {
+            data.splice(i, i+1);
+           }else{ 
+            data.splice(i, i);
+          }
+           
+            list.innerHTML = "";
+            getList(data)
+            console.log(data);
+          }
+          
+        }
+      }
     });
   }
   
@@ -60,3 +61,29 @@ function getValue() {
     </li>`;
     }
   }
+
+
+//   else if(e.target.textContent === "save"){
+//     for (let i = 0; i < data.length; i++) {
+//       if (data[i].id == TitleEdit.textContent) {
+//         list.innerHTML += ` <li>
+//      <div class="wrapper">
+//     <div id="id_title">${data[i].id}</div>
+//       <h1>Title:${data[i].title}</h1>
+//       <div class="description">description: :${data[i].description}</div>
+//       <div class="but">
+//           <button>delete</button>
+//           <button>edit</button>
+//       </div>
+//   </div>
+// </li>`;
+        
+//         list.innerHTML = "";
+//         getList(data)
+//         console.log(data);
+//       }
+//     }
+        
+//     getModal.style.display='none'
+
+//   }

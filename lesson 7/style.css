@@ -1,7 +1,7 @@
 .wrapper{
     border: slateblue solid 2px;
     width: 400px;
-    min-height: 300px;
+    min-height: 250px;
     list-style-type: none;
     background-color: aqua;
 }
@@ -18,7 +18,7 @@ li{
     justify-content: space-between;
 }
 .description{
-    min-height: 170px;
+    min-height: 120px;
 }
 button{
 
