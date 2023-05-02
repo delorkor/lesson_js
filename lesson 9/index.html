@@ -9,34 +9,35 @@
 </head>
 <body>
     <label for="">Имя</label>
-    <input class="fio" type="text" value="">
+    <input id="name" type="text" value="">
     <label for="">Фамилия</label>
-    <input class="fio" type="text" value="">
+    <input id="surname" type="text" value="">
     <label for="">Зарплата</label>
-    <input class="fio" type="text" value="">
+    <input id="salary" type="text" value="">
     <label for="">дата найма</label>
-    <input class="fio" type="date" value="">
+    <input id="dateHiring" type="date" value="">
     <input id="but" type="submit">
-    <input id="del" type="submit" value="удалить">
-    <table>
+    <table id="table">
       <thead>
           <tr>
             <th class="tabl" ></th>
             <th class="tabl" >Имя</th>
               <th class="tabl" >Фамилия</th>
-              <th >Зарплата</th>
-              <th >дата найма</th>
+              <th >Зарплата <button id="salaryMax">MAX</button><button id="salaryMin">MIN</button></th>
+              <th >дата найма <button id="DateMax">MAX</button><button id="DateMin">MIN</button> </th>
           </tr>
       </thead>
-      <tbody id="tavle_body">
-              <br>
+      <tbody id="Tbody">  
       </tbody>
   </table>
+  <div class="but">
+    <button id="delAll">Уволить всех</button>
+    <button id="del">Уволить</button>
+    <button id="edit">Редактировать</button>
 
-    </div>
-  <script crs>
-
-  </script>  
+  </div>
+<div class="baner">Мы увольняем сотрудников !</div>
+    </div> 
       <script src="main.js"></script>
 </body>
 </html>
